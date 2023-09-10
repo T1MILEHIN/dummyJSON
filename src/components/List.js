@@ -37,7 +37,7 @@ function List({ list }) {
                 key={item.id}
                 className={`rounded-lg flex flex-col relative group`}
               >
-                <div className={`relative w-full h-72`}>
+                <div className={`relative w-full aspect-square`}>
                   <LazyLoadImage
                     effect="blur"
                     src={item.images[0]}
