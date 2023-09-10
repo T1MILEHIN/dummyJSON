@@ -33,7 +33,7 @@ const SingleProductDisplay = (props)=> {
                 <Link to={`/`} className="bg-blue-500 p-2 rounded-lg font-bold inline-block ">BACK</Link>
             </div>
             <div className="absolute top-5 md:left-5 left-2 flex md:flex-col flex-row md:gap-5 gap-2">
-                {props.images.map((img, index)=> <img key={index} src={img} onClick={()=> changeImg(index)} className="md:w-16 w-10 aspect-square object-cover border-2 border-black rounded-lg" alt="" />)}
+                {props.images.map((img, index)=> <img key={index} src={img} onClick={()=> changeImg(index)} className="md:w-16 w-12 aspect-square object-cover border-2 border-black rounded-lg" alt="" />)}
             </div>
         </div>
     )

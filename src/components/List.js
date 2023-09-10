@@ -37,11 +37,11 @@ function List({ list }) {
                 key={item.id}
                 className={`rounded-lg flex flex-col relative group`}
               >
-                <div className={`relative w-full md:h-72`}>
+                <div className={`relative w-full h-72`}>
                   <LazyLoadImage
                     effect="blur"
                     src={item.images[0]}
-                    className={`aspect-square object-center object-cover rounded-2xl`}
+                    className={`w-full aspect-square object-center object-cover rounded-2xl`}
                     alt={item.title}
                   />
                 </div>
@@ -66,9 +66,6 @@ function List({ list }) {
                 </Link>
               </motion.div>
             </AnimatePresence>
-
-
-            {/* <ProductModal key={selected} product={selected} modalClose={modalClose} /> */}
           </>
         );
       })}
