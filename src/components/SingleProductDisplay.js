@@ -17,7 +17,7 @@ const SingleProductDisplay = (props)=> {
                         <LazyLoadImage
                         src={props.images[imgIndex]}
                         effect="blur"
-                        className="w-full aspect-square object-contain rounded-2xl"
+                        className="w-full aspect-square object-cover rounded-2xl"
                         />
                     </motion.div>
                 </AnimatePresence>
@@ -32,8 +32,8 @@ const SingleProductDisplay = (props)=> {
                 <p>{props.description}</p>
                 <Link to={`/`} className="bg-blue-500 p-2 rounded-lg font-bold inline-block ">BACK</Link>
             </div>
-            <div className="absolute top-5 md:left-5 left-2 flex flex-col gap-5">
-                {props.images.map((img, index)=> <img key={index} src={img} onClick={()=> changeImg(index)} className="md:w-16 w-12 aspect-square object-cover border-2 border-black rounded-lg" alt="" />)}
+            <div className="absolute top-5 md:left-5 left-2 flex md:flex-col flex-row gap-5">
+                {props.images.map((img, index)=> <img key={index} src={img} onClick={()=> changeImg(index)} className="md:w-16 w-10 aspect-square object-cover border-2 border-black rounded-lg" alt="" />)}
             </div>
         </div>
     )
