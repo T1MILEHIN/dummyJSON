@@ -1,42 +1,23 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from "@mui/material";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function UsersImage({ list }) {
     return (
-        <div className="d-flex flex-wrap justify-content-space-around" >
-            {list.map((item, index) => {
+        <div className="grid  lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10 md:p-10 p-2" >
+            {list?.users.map((item, index) => {
                 return (
-                    <Card sx={{ maxWidth: 245 }} key={index} className="m-4">
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="195"
-                                image={item.image}
-                                alt="green iguana"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {item.firstName}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {item.email}
-                                </Typography>
-                                <Typography variant="body2" className='mt-2' color="text.secondary">
-                                    <span className='p-1 '>gender</span>  {item.gender}
-                                </Typography>
-
-                                <Typography variant="body2" className='mt-2' color="text.secondary">
-                                    <span className='p-1'>userAgent</span>     {item.userAgent}
-                                </Typography>
-                            </CardContent>
-
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                more
-                            </Button>
-                        </CardActions>
-                    </Card>
+                    <div key={index}>
+                        <LazyLoadImage
+                            effect="blur"
+                            src={item.image}
+                            className="w-full h-52 object-cover duration-300"
+                            alt=""
+                        />
+                        <p className="flex items-center justify-between font-bold">NAME:<span>{item.firstName}</span></p>
+                        <p className="flex items-center justify-between font-bold">E-MAIL:<span>{item.email}</span></p>
+                        <p className="flex items-center justify-between font-bold">GENDER:<span>{item.gender}</span></p>
+                        <p className="flex items-center justify-between font-bold">USER-AGENT:<span>{item.email}</span></p>
+                    </div>
                 )
             })}
         </div>

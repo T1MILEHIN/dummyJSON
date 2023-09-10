@@ -3,13 +3,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NavLinks from "./views/NavLinks";
-import { element } from "svelte/internal";
 import Home from "./views/Home";
 import SearchProducts from "./views/SearchProducts";
 import Categories from "./views/Categories";
 import Users from "./views/Users";
-
-
+import Comments from "./views/Comments";
+import Todos from "./views/Todos";
+import SearchUsers from "./views/SearchUsers";
+import SingleProduct from "./views/SingleProduct";
+import { SingleProductLoader } from "./views/SingleProduct";
+import CategoriesProducts from "./components/CathegorizedProduct";
+import Students from "./views/Students";
 
 const router = createBrowserRouter([
   {
@@ -26,18 +30,41 @@ const router = createBrowserRouter([
       },
       {
         path: "categories",
-        element:<Categories/>
+        element:<Categories/>,
+        children: [
+          {
+            path: ":category",
+            element: <CategoriesProducts />
+          },
+        ]
       },
       {
-        
+        path: "comments",
+        element: <Comments />
+      },
+      {
+        path: "todos",
+        element: <Todos />
       },
       {
         path: "users",
         element:<Users/>
+      },
+      {
+        path: "search",
+        element: <SearchUsers />
       }
-    ]
-
+    ],
   },
+  {
+    path: "/products/:productId",
+    element: <SingleProduct />,
+    loader: SingleProductLoader,
+  },
+  {
+    path: "/students",
+    element: <Students />
+  }
 ]);
 
 function App() {

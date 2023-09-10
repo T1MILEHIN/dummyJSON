@@ -1,7 +1,6 @@
-import  List  from "../components/List";
 import { useState, useEffect } from "react";
-import { Circles } from "react-loader-spinner";
 import CategoriesList from "../components/CategoriesList";
+import { Outlet } from "react-router-dom";
 
 const api = 'https://dummyjson.com/products/categories';
 function Categories() {
@@ -20,7 +19,6 @@ function Categories() {
             setData(data)
             setLoader(false)  // remove the true 
             setError("")
-            console.log(data)
         } catch (err) {
             console.log(err.message)
             setError(err.message) /// set the error state 
@@ -30,9 +28,15 @@ function Categories() {
         fetchproducts()
     }, []);
     return (
-        <div className="container ">   
-            {loader && <h2>Loading categories.......</h2>}
-            {!loader && <CategoriesList categories={ data} />}
+        <div className="container mx-auto grid md:grid-cols-6 grid-cols-1 gap-10 items-start">   
+            <div className="col-span-6 md:col-span-1">
+                {loader && <h2 className="text-center">Loading categories...</h2>}
+                {!loader && <CategoriesList categories={data} />}
+            </div>
+            <div className="md:col-span-5 col-span-6">
+                {!loader && <Outlet />}
+                {error && <p className="text-red-500 font-bold text-center mx-auto">{error}</p>}
+            </div>
         </div>
     )
 }
