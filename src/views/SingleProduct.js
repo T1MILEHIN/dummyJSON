@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, use } from "react-router-dom";
 import axios from "axios";
 import SingleProductDisplay from "../components/SingleProductDisplay";
 

@@ -17,6 +17,7 @@ function NavLinks() {
                 <NavLink className={({isActive})=> isActive ? "text-red-500 font-bold no-underline block w-full" : "no-underline block w-full font-bold"} to="search">Search for Users</NavLink>
                 <NavLink className={({isActive})=> isActive ? "text-red-500 font-bold no-underline block w-full" : "no-underline block w-full font-bold"} to="comments">Commentss</NavLink>
                 <NavLink className={({isActive})=> isActive ? "text-red-500 font-bold no-underline block w-full" : "no-underline block w-full font-bold"} to="todos">Get ALL Todos</NavLink>
+                <NavLink className={({isActive})=> isActive ? "text-red-500 font-bold no-underline block w-full" : "no-underline block w-full font-bold"} to="studentform">Student Form</NavLink>
                 <div className="md:hidden absolute top-0 right-2 font-bold text-3xl cursor-pointer" onClick={()=> setNav(false)}>x</div>
             </nav>
             <FaBars size={50} className={`p-2 md:hidden ml-auto`} onClick={toggleNav} />

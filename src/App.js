@@ -14,6 +14,7 @@ import SingleProduct from "./views/SingleProduct";
 import { SingleProductLoader } from "./views/SingleProduct";
 import CategoriesProducts from "./components/CathegorizedProduct";
 import Students from "./views/Students";
+import StudentTable from "./components/StudentTable";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         ]
       },
       {
+        path: "studentform",
+        element: <Students />
+      },
+      {
         path: "comments",
         element: <Comments />
       },
@@ -53,7 +58,7 @@ const router = createBrowserRouter([
       {
         path: "search",
         element: <SearchUsers />
-      }
+      },
     ],
   },
   {
@@ -61,9 +66,10 @@ const router = createBrowserRouter([
     element: <SingleProduct />,
     loader: SingleProductLoader,
   },
+  
   {
-    path: "/students",
-    element: <Students />
+    path: "/allstudents",
+    element: <StudentTable />
   }
 ]);
 
