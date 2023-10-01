@@ -56,7 +56,8 @@ const EditModal = ({modal, setModal, keyId})=> {
     if (error) return <p className="text-center text-xl md:text-3xl font-bold text-red-500">{error.message}</p>
     return (
         <div className={`fixed inset-0 ${modal ? "bg-black bg-opacity-[0.8] z-10" : "z-[-10] bg-transparent"} duration-300`}>
-            <div className={`absolute z-20 ${modal ? "top-10" : "top-[-100%]"} left-[50%] translate-x-[-50%] w-[90%] md:w-[35%] bg-white shadow-md rounded-md p-10 duration-300`}>
+            <div className={`absolute z-20 ${modal ? "top-10" : "top-[-100%]"} left-[50%] translate-x-[-50%] w-[90%] md:w-[35%] bg-white shadow-md rounded-md p-5 md:p-10 duration-300`}>
+                <h1 className="font-bold">UPDATE {data?.data.firstname} {data?.data.lastname}</h1>
                 <form onSubmit={updateStudentData}>
                     <input placeholder="FirstName" ref={firstname} defaultValue={data?.data.firstname}  name="firstname" className="w-full h-8 md:h-10 font-bold md:text-xl pl-2 border-2 border-black mb-4" type="text" />
                     <input placeholder="LastName" ref={lastname} defaultValue={data?.data.lastname} name="lastname" className="w-full h-8 md:h-10 font-bold md:text-xl pl-2 border-2 border-black mb-4" type="text" />

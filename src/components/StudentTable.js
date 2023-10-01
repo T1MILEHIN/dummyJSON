@@ -33,21 +33,21 @@ const StudentTable = () => {
                 </caption>
                 <thead>
                     <tr>
-                        <th className="py-3 px-2 border border-slate-300">FIRSTNAME</th>
-                        <th className="py-3 px-2 border border-slate-300">LASTNAME</th>
-                        <th className="py-3 px-2 border border-slate-300">SURNAME</th>
-                        <th className="py-3 px-2 border border-slate-300">AGE</th>
+                        <th className="text-sm md:text-md p-1 md:py-3 md:px-2 border border-slate-300">FIRSTNAME</th>
+                        <th className="text-sm md:text-md p-1 md:py-3 md:px-2 border border-slate-300">LASTNAME</th>
+                        <th className="text-sm md:text-md p-1 md:py-3 md:px-2 border border-slate-300">SURNAME</th>
+                        <th className="text-sm md:text-md p-1 md:py-3 md:px-2 border border-slate-300">AGE</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data?.data && keys?.map((key)=> (
                     <tr>
-                        <td className="py-3 px-2 border border-slate-300">{data?.data[key]?.firstname}</td>
-                        <td className="py-3 px-2 border border-slate-300">{data?.data[key]?.lastname}</td>
-                        <td className="py-3 px-2 border border-slate-300">{data?.data[key]?.surname}</td>
-                        <td className="py-3 px-2 border border-slate-300">{data?.data[key]?.age}</td>
-                        <td onClick={()=> edit(key)} className="font-black text-white cursor-pointer py-3 px-2 border border-slate-300 bg-green-400 hover:bg-green-600">EDIT</td>
-                        <td onClick={()=> del(key)} className="font-black text-white cursor-pointer py-3 px-2 border border-slate-300 bg-red-400 hover:bg-red-600">DELETE</td>
+                        <td className="text-sm md:text-md p-1 md:px-2 md:py-3 border border-slate-300">{data?.data[key]?.firstname}</td>
+                        <td className="text-sm md:text-md p-1 md:px-2 md:py-3 border border-slate-300">{data?.data[key]?.lastname}</td>
+                        <td className="text-sm md:text-md p-1 md:px-2 md:py-3 border border-slate-300">{data?.data[key]?.surname}</td>
+                        <td className="text-sm md:text-md p-1 md:px-2 md:py-3 border border-slate-300">{data?.data[key]?.age}</td>
+                        <td onClick={()=> edit(key)} className="p-1 text-sm md:text font-black text-white cursor-pointer md:py-3 md:px-2 border border-slate-300 bg-green-400 hover:bg-green-600">EDIT</td>
+                        <td onClick={()=> del(key)} className="p-1 text-sm md:text font-black text-white cursor-pointer md:py-3 md:px-2 border border-slate-300 bg-red-400 hover:bg-red-600">DELETE</td>
                     </tr>
                     ))}
                 </tbody>
