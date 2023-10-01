@@ -29,7 +29,7 @@ function SearchProducts() {
             </AnimatePresence>
             <div>
                 {isLoading ? <Loader /> : <List list={searchedProduct?.data?.products} />}
-                {error && <p className="text-center text-xl md:text-3xl font-bold text-red-500">{error.message}</p>}
+                {error && <motion.p initial={{y:'-40px', opacity:0}} animate={{y:0, opacity:1}} className="min-h-screen flex justify-center items-center text-xl md:text-3xl font-bold text-red-500">{error.message}</motion.p>}
             </div>
         </div>
     )

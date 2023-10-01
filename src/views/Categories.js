@@ -11,17 +11,20 @@ function Categories() {
         try {
             setError("")
             setLoader(true)  //loading will start from here 
-            const resposne = await fetch(api)
-            if (!resposne.ok) {
+            const response = await fetch(api)
+            if (!response || !response.ok) {
                 throw new Error("something happened")
             }
-            const data = await resposne.json()
+            console.log(response)
+            const data = await response.json()
             setData(data)
             setLoader(false)  // remove the true 
             setError("")
         } catch (err) {
-            console.log(err.message)
             setError(err.message) /// set the error state 
+        }
+        finally {
+            setLoader(false)
         }
     }
     useEffect(() => {
@@ -32,6 +35,7 @@ function Categories() {
             <div className="col-span-6 md:col-span-1">
                 {loader && <h2 className="text-center">Loading categories...</h2>}
                 {!loader && <CategoriesList categories={data} />}
+                {error && <p className="text-red-500 font-bold text-center mx-auto">{error}</p>}
             </div>
             <div className="md:col-span-5 col-span-6">
                 {!loader && <Outlet />}

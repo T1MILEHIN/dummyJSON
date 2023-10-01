@@ -30,7 +30,7 @@ const SearchUsers = ()=> {
                 <AnimatePresence>
                     {theSearchedUser?.data?.users.length > 0 ? <motion.p initial={{y:'-100px', opacity:0}} animate={{y:0, opacity:1}} exit={{y:'50px', opacity:0}} className="text-center my-2 font-bold text-xl">{theSearchedUser?.data?.users.length} user{theSearchedUser?.data?.users.length > 1 && "s"} Found</motion.p> : theSearchedUser?.data?.users && <motion.p initial={{y:'-100px', opacity:0}} animate={{y:0, opacity:1}} exit={{y:'50px', opacity:0}} className="text-center my-2 font-bold text-xl">No User Found</motion.p>}
                 </AnimatePresence>
-                {error && <p className="text-center text-xl md:text-3xl font-bold text-red-500">{error.message}</p>}
+                {error && <motion.p initial={{y:'-40px', opacity:0}} animate={{y:0, opacity:1}} className="min-h-screen flex justify-center items-center text-xl md:text-3xl font-bold text-red-500">{error.message}</motion.p>}
                 {isLoading && <Loader />}
                 <div className="grid md:grid-cols-3 grid-cols-1 gap-10 px-2 md:px-10">
                     {!isLoading && <SearchedUserCard user={theSearchedUser?.data?.users} />}

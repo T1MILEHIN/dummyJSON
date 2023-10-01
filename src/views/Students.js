@@ -31,7 +31,7 @@ const Students = ()=> {
             headers: {"Content-Type": "application/json"},
         })},
         onSuccess: ()=> {
-            queryClient.invalidateQueries({ queryKey: ["students"] })
+            queryClient.invalidateQueries(["students"])
         },
     })
     const handleSubmit = (e)=> {
