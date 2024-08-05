@@ -13,10 +13,10 @@ function UsersImage({ list }) {
                             className="w-full h-52 object-cover duration-300"
                             alt=""
                         />
-                        <p className="flex items-center justify-between font-bold">NAME:<span>{item.firstName}</span></p>
-                        <p className="flex items-center justify-between font-bold">E-MAIL:<span>{item.email}</span></p>
-                        <p className="flex items-center justify-between font-bold">GENDER:<span>{item.gender}</span></p>
-                        <p className="flex items-center justify-between font-bold">USER-AGENT:<span>{item.email}</span></p>
+                        <p className="flex items-center justify-between font-semibold text-sm">NAME:<span>{item.firstName}</span></p>
+                        <p className="flex items-center justify-between font-semibold text-sm">E-MAIL:<span>{item.email}</span></p>
+                        <p className="flex items-center justify-between font-semibold text-sm">GENDER:<span>{item.gender}</span></p>
+                        <p className="flex items-center justify-between font-semibold text-sm">USER-AGENT:<span>{item.email}</span></p>
                     </div>
                 )
             })}
