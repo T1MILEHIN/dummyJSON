@@ -20,7 +20,7 @@ const Students = ()=> {
         setFormData(prev=> {
             return ({
                 ...prev,
-                [name]:value
+                [name] : value
             })
         })
     }
@@ -54,6 +54,7 @@ const Students = ()=> {
             })
         })
     }
+
     return (
         <div className="container mx-auto p-4">
             <h1 className="font-bold text-2xl md:text-4xl">STUDENT FORM</h1>
@@ -71,5 +72,6 @@ const Students = ()=> {
         </div>
     )
 }
+
 
 export default Students;

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import CategoriesList from "../components/CategoriesList";
 import { Outlet } from "react-router-dom";
 
-const api = 'https://dummyjson.com/products/categories';
+const api = 'https://dummyjson.com/products/category-list';
 function Categories() {
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(false)
