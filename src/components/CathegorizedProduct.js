@@ -18,7 +18,7 @@ const CategorizedProducts = ()=> {
     
     return (
         <>
-            <List list={categorized?.data.products}/>
+            <List list={categorized?.data?.products}/>
         </>
     )
 }
